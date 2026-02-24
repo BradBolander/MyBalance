@@ -1,0 +1,98 @@
+.wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timeline {
+  position: relative;
+  height: 800px;
+  min-height: 480px;
+}
+
+.hourMark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  transform: translateY(-50%);
+}
+
+.hourLabel {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.currentTimeIndicator {
+  position: absolute;
+  left: 48px;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  z-index: 10;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.currentTimeIndicator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blocks {
+  position: absolute;
+  top: 0;
+  left: 48px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.block {
+  position: absolute;
+  left: 0;
+  right: 4px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.block.draggable {
+  cursor: grab;
+}
+
+.block.draggable:active {
+  cursor: grabbing;
+}
+
+.blockName {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blockTime {
+  font-size: 0.65rem;
+  opacity: 0.9;
+}

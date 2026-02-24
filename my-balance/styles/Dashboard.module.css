@@ -1,0 +1,215 @@
+.container {
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.main {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.dashboardLeft {
+  grid-column: 1 / 7;
+}
+
+.dashboardRight {
+  grid-column: 7 / 13;
+  position: sticky;
+  top: 1rem;
+  margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardLeft,
+  .dashboardRight {
+    grid-column: 1 / -1;
+  }
+}
+
+.title {
+  font-size: 1.75rem;
+  margin: 0 0 0.25rem 0;
+  color: var(--text);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+}
+
+.empty {
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+}
+
+.empty p {
+  margin: 0 0 1rem 0;
+}
+
+.link {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-muted);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.item.completed {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.item.completed .name {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.item.missed {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.item.missed .name {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.itemMain {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.time {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.name {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btnComplete {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnComplete:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btnMissed {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnMissed:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.btnUndo {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnUndo:hover:not(:disabled) {
+  background: var(--border);
+  color: var(--text);
+}
+
+.editLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.editLink:hover {
+  text-decoration: underline;
+}
